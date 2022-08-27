@@ -1,0 +1,27 @@
+:root{
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(88, 88, 88);
+}
+
+
+#tablero{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    margin: 10% 30%;
+    height: 30rem;
+}
+
+.casilla{
+    background-color: white;
+    box-shadow: 0 0 0 3px black;
+    cursor: pointer;
+}
+
+.casilla img{
+    width: 100%;
+}
