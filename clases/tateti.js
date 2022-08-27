@@ -1,8 +1,8 @@
-import { Jugadores } from "/jugador.js";
+import { jugadorO,jugadorX } from "/jugador.js";
+
 
 export class Tateti{
-    constructor(jugador) {
-        this.jugador = jugador    
+    constructor() {
     }
 
     construirJuego(){
@@ -18,21 +18,15 @@ export class Tateti{
             tablero.append(casilla)   
         };
         console.log("termine")
-    }
-
-    
-    
+    } 
     obtenerClick(ev) {
-        const img = this.jugador.obtenerImagen()
+        const img = jugadorO.obtenerImagen()
         const valor= document.getElementById(this.id).querySelector("img").getAttribute("src")
         if (valor === "../imagenes/vacia.png"){
             document.getElementById(this.id).querySelector("img").setAttribute("src",img)
-            console.log(this.jugador.obtenerSimbolo)
+            console.log(jugadorO.obtenerSimbolo)
         }else{
             console.log("Error")
         }  
     }
-
-    
-
 }
