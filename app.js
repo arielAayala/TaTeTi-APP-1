@@ -1,4 +1,4 @@
-import { Tateti } from "/clases/tateti.js";
+import { juego } from "/clases/tateti.js";
 
-const juego = new Tateti()
+
 juego.construirJuego()
