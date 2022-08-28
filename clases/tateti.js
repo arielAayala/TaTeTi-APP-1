@@ -1,10 +1,8 @@
 import { Jugadores } from "./jugador.js";
-const jugadorX = new Jugadores("X","../imagenes/cruz.png")
-const jugadorO = new Jugadores("O","../imagenes/circulo.png")
+const jugadorX = new Jugadores("X","../imagenes/cruz.png",2)
+const jugadorO = new Jugadores("O","../imagenes/circulo.png",1)
 export class Tateti{
-    
     constructor() { 
-        this.jugadorActual = "hola"
     }
 
     construirJuego(){
@@ -21,22 +19,10 @@ export class Tateti{
         };
         console.log("termine")
     } 
-    get jugador(){
-        return this.jugadorActual
-    }
-
-    set cambiarTurno(actual){
-
-    }
-
-
     verificarClick(ev) {   
-            const valor= document.getElementById(this.id).querySelector("img").getAttribute("src")
-            if (valor === "../imagenes/vacia.png"){
-                const img = jugadorO.obtenerImagen()
-                document.getElementById(this.id).querySelector("img").setAttribute("src",img)
-            }else{
-                console.log("Error CIRCULO")
-            } 
-    }
+    const valor= document.getElementById(this.id).querySelector("img").getAttribute("src")
+    if (valor === "../imagenes/vacia.png"){
+        const img = jugadorO.obtenerImagen()
+        document.getElementById(this.id).querySelector("img").setAttribute("src",img)
+    }}
 }
