@@ -1,38 +1,87 @@
 :root{
     font-size: 62.5%;
+    
 }
 body{
-    color: red;
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: gray;
 }
 
+/*header*/
+header{
+    background-color: black;
+}
+.conteiner-header{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1,auto);
+    height: 10em;
+    top: 0;
+}
+.conteiner-header div img{
+    height: 7em;
+    padding-top: 1em;
+}
+.conteiner-header div h1{
+    font-size: 1em;
+}
 
-
+/*tablero*/
 article{
     width: 100%;
     height: 100%;
-    background-color: gray;
+    background-color: white;
 }
 
 #tablero{
     display: grid;
     grid-template-columns: repeat(3, auto);
-    padding: 10% 35%;
+    width: 30%;
+    padding: 5rem 35%;
 }
 
 .casilla{
     background-color: white;
     box-shadow: 0 0 0 3px black;
     cursor: pointer;
-    width: 100%;
+    width: 15em;
+    height: 15em;
+    justify-self: center;
+
 }
 
 .casilla img{
     width: 100%;
+    height: 100%;
+}
+/*footer*/
+.conteiner-footer{
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    background-color: black;
+    height: 5.5em;
 }
 
+.pie{
+    width: 100%;
+    height: 5em;
+    font-size: 0.75rem;
+    padding-top: 2em;
+}
+
+.pie a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 2em;
+}
+
+.pie a img{
+    height: 80%;
+}
 
 
