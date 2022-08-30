@@ -1,4 +1,5 @@
-import { juego } from "/clases/tateti.js";
+import{visual} from "/clases/UI.js";
 
 
-juego.construirJuego()
+
+visual.construirJuego()
