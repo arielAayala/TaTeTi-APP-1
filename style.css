@@ -52,15 +52,15 @@ article{
 /*puntajes*/
 #puntaje{
     display: grid;
-    width: 20%;
+    width: 100%;
     height: 5em;
     color: black;
-    padding: 0 40%;
-    grid-template-columns: 1fr 0 1fr;  
+    grid-template-columns: 1fr 0 1fr; 
+    gap: 2em; 
 }
 
 #puntaje h3{
-    font-size: 2em;
+    font-size: 4em;
 }
 
 #O{
@@ -70,12 +70,21 @@ article{
 #X{
     box-shadow: rgba(43, 15, 202, 0.4) -5px 5px, rgba(59, 46, 240, 0.3) -10px 10px, rgba(46, 49, 240, 0.2) -15px 15px, rgba(59, 46, 240, 0.1) -20px 20px, rgba(65, 46, 240, 0.05) -25px 25px;
 }
+
+.jugadorActualO{
+    background-color: rgb(255, 86, 86);
+}
+
+.jugadorActualX{
+    background-color: rgb(38, 80, 219);
+}
 /*tablero*/
 #tablero{
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 20%;
     padding: 20rem 40% 0;
+    margin: auto;
 
 }
 
@@ -121,64 +130,102 @@ article{
 
 #proyecto{
     margin-top: -2.7em;
-    height: 90%;
+    height: 80%;
 }
 
 
-@media (max-width: 576px) { 
+/*media queries*/
+
+@media (min-width: 320px) { 
     .casilla{
-        width: 8.5em;
-        height: 7.5em;       
+        width: 7.5em;
+        height: 7.5em;         
     }
     #tablero{
-        width: 40%;
-        padding: 33.5rem 35% 0 25%;
+        width: 10%;
+        padding: 15rem 60% 0% 0%;
     }
  }
 
-@media (max-width: 768px) and  (min-width:576px){ 
+@media (min-width: 375px) { 
+    .casilla{
+        width: 9.5em;
+        height: 9.5em;         
+    }
+    #tablero{
+        width: 10%;
+        padding: 15rem 65% 0% 0%;
+    }
+ }
+
+
+@media (min-width: 425px) { 
     .casilla{
         width: 11.5em;
-        height: 10.5em;       
+        height: 11.5em;         
     }
     #tablero{
-        width: 40%;
-        padding: 33.5rem 33% 0 27%;
+        width: 10%;
+        padding: 15rem 70% 0% 0%;
     }
  }
 
-@media (max-width: 1024px) and  (min-width:768px){ 
-    .casilla{
-        width: 11.5em;
-        height: 10.5em;       
-    }
-    #tablero{
-        width: 30%;
-        padding: 33.5rem 35% 0;
-    }
- }
-
-@media (max-width: 1400px) and  (min-width:1024px){
-    .casilla{
-        width: 13.5em;
-        height: 12.5em;       
-    }
-    #tablero{
-        width: 25%;
-        padding: 27.5rem 37.5% 0;
-    }
- }
-
-@media (max-width: 1920px ) and (min-width:1400px) {
+@media (min-width:768px){ 
     .casilla{
         width: 15.5em;
-        height: 14em;
+        height: 15.5em;       
+    }
+    #tablero{
+        width: 20%;
+        padding: 15rem 40% 0 10%;
+    }
+ }
 
+ @media (min-width: 1024px) {
+    .casilla{
+        width: 15.5em;
+        height: 15.5em;       
+    }
+    #tablero{
+        width: 20%;
+        padding: 15rem 40% 0 25%;
+    }
+ }
+
+@media (min-width: 1440px) {
+    .casilla{
+        width: 15.5em;
+        height: 15.5em;       
+    }
+    #tablero{
+        width: 20%;
+        padding: 15rem 40% 0 34%;
+    }
+ }
+
+ @media (min-width: 1920px ){
+    .casilla{
+        width: 15.5em;
+        height: 15.5em;
     }
 
     #tablero{
-        width: 25%;
-        padding: 23rem 37.5% 0;
+        width: 15%;
+        padding: 15rem 42.5% 0 37.5% ;
     }
  }
+
+ @media (min-width: 2560px ){
+    .casilla{
+        width: 15.5em;
+        height: 15.5em;
+    }
+
+    #tablero{
+        width: 15%;
+        padding: 15rem 42.5% 0 39% ;
+    }
+ }
+
+
 

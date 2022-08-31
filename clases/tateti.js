@@ -32,18 +32,24 @@ class Tateti{
         (img == this.posicion(0) && img == this.posicion(3) && this.posicion(6) == img) ||
         (img == this.posicion(1) && img == this.posicion(4) && this.posicion(7) == img) ||
         (img == this.posicion(2) && img == this.posicion(5) && this.posicion(8) == img)){
+            setTimeout((this.jugarNuevamente),1000)
             this.terminado = true
             this.jugadorActual.sumarPuntaje()
             this.jugadorActual.actualizarPuntaje()
+            this.terminado = false   
         }
     }
 
-    terminado(){
+    retornarTerminado(){
         return this.terminado
     }
 
+
     jugarNuevamente(){
-        this.terminado = false
+        for (let i = 0; i < 9; i++) {
+            document.getElementById(i).querySelector("img").setAttribute("src","../imagenes/vacia.png")    
+        }
+        
     }
 
     /*retorna el jugador actual*/

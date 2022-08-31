@@ -3,6 +3,17 @@ class UI {
     constructor(){
     }
 
+
+    turnoJugadores(){
+        if(juego.jugadorActual.simbolo == "X"){
+            document.getElementById("O").classList.remove("jugadorActualO")
+            document.getElementById("X").classList.add("jugadorActualX")
+        }else{
+            document.getElementById("X").classList.remove("jugadorActualX")
+            document.getElementById("O").classList.add("jugadorActualO")
+        }
+    }
+
     /*crea el tablero vacio para jugar*/
     construirJuego(){
         const tablero = document.getElementById("tablero")
@@ -15,34 +26,24 @@ class UI {
             casilla.onclick = this.verificarClick
             casilla.append(simbolo)
             tablero.append(casilla)   
-        };
-    } 
-
-    limpiarJuego(){
-        for(let i = 0; i <= 8; i++){
-            document.getElementById(i).querySelector("img").setAttribute("src","../imagenes/vacia.png")
         }
-    }
+    }; 
+
 
     /* evento click de los divs creados */
     verificarClick(ev) {
-        if (juego.terminado === true){
-            console.log("entre")  
-            juego.jugarNuevamente()
-            visual.limpiarJuego()
-        } 
         const valor= document.getElementById(this.id).querySelector("img").getAttribute("src")
-        if (valor == "../imagenes/vacia.png" && juego.terminado == false){
+        if (valor == "../imagenes/vacia.png" && juego.retornarTerminado() == false){
             const img = juego.jugadorActual.obtenerImagen()
             document.getElementById(this.id).querySelector("img").setAttribute("src",img)
             juego.terminarJuego()
             if (!juego.terminado){
                 juego.cambiarJugador()
-            } 
+                visual.turnoJugadores()
+            }
         }
-    };
+    };     
+};
 
-
-}
 
 export const visual = new UI();
