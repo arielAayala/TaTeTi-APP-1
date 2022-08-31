@@ -23,6 +23,7 @@ class Tateti{
 
     /* verifica si hay un ganador*/
     terminarJuego(){
+        const vacio = "../imagenes/vacia.png"
         const img = this.jugadorActual.obtenerImagen()
         if ((img == this.posicion(0) && img == this.posicion(1) && this.posicion(2) == img) || 
         (img == this.posicion(3) && img == this.posicion(4) && this.posicion(5) == img) ||
@@ -36,7 +37,11 @@ class Tateti{
             this.terminado = true
             this.jugadorActual.sumarPuntaje()
             this.jugadorActual.actualizarPuntaje()
-            this.terminado = false   
+            setTimeout(()=>{this.terminado = false},1000)  
+        }else if((vacio != this.posicion(0) && vacio != this.posicion(1) && this.posicion(2) != vacio && 
+        vacio != this.posicion(3) && vacio != this.posicion(4) && this.posicion(5) != vacio &&
+        vacio != this.posicion(6) && vacio != this.posicion(7) && this.posicion(8) != vacio)){
+            setTimeout((this.jugarNuevamente),1000)
         }
     }
 
