@@ -10,9 +10,10 @@ class Tateti{
     constructor() { 
         this.jugadorActual = jugadorO
         this.terminado = false
+        this.puntajeX = 0
+        this.puntajeO = 0
     }
 
-    
     /**
      * @param {integer} id se refiere al id se la casillas 
      * @returns el path de la img que contiene dicha casilla
@@ -35,9 +36,10 @@ class Tateti{
         (img == this.posicion(2) && img == this.posicion(5) && this.posicion(8) == img)){
             setTimeout((this.jugarNuevamente),1000)
             this.terminado = true
-            this.jugadorActual.sumarPuntaje()
-            this.jugadorActual.actualizarPuntaje()
-            setTimeout(()=>{this.terminado = false},1000)  
+            this.sumarPuntaje()
+            this.actualizarPuntaje() 
+            setTimeout(()=>{this.terminado = false},1000)
+            this.cambiarJugador()
         }else if((vacio != this.posicion(0) && vacio != this.posicion(1) && this.posicion(2) != vacio && 
         vacio != this.posicion(3) && vacio != this.posicion(4) && this.posicion(5) != vacio &&
         vacio != this.posicion(6) && vacio != this.posicion(7) && this.posicion(8) != vacio)){
@@ -45,17 +47,6 @@ class Tateti{
         }
     }
 
-    retornarTerminado(){
-        return this.terminado
-    }
-
-
-    jugarNuevamente(){
-        for (let i = 0; i < 9; i++) {
-            document.getElementById(i).querySelector("img").setAttribute("src","../imagenes/vacia.png")    
-        }
-        
-    }
 
     /*retorna el jugador actual*/
     get jugador(){
@@ -66,6 +57,32 @@ class Tateti{
     cambiarJugador(){
         this.jugadorActual = (this.jugador == jugadorO) ? jugadorX : jugadorO
     }
+
+    /*sumar puntaje*/
+    sumarPuntaje(){
+        if(this.jugadorActual.obtenerSimbolo() == "O"){
+            this.puntajeO +=1
+        }else if (this.jugadorActual.obtenerSimbolo() == "X"){
+            this.puntajeX += 1
+        }
+    }
+
+    /*Actualizar puntaje*/
+    actualizarPuntaje(){
+        document.getElementById("X").querySelector("h3").innerHTML = this.puntajeX
+        document.getElementById("O").querySelector("h3").innerHTML = this.puntajeO
+    }
   
+
+    retornarTerminado(){
+        return this.terminado
+    }
+
+    jugarNuevamente(){
+        for (let i = 0; i < 9; i++) {
+            document.getElementById(i).querySelector("img").setAttribute("src","../imagenes/vacia.png")    
+        }
+        
+    }
 }
 export const juego = new Tateti()

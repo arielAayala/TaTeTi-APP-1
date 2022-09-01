@@ -1,8 +1,7 @@
 import { juego } from "/clases/tateti.js";
-class UI {
+class Tablero {
     constructor(){
     }
-
 
     turnoJugadores(){
         if(juego.jugadorActual.simbolo == "X"){
@@ -39,11 +38,13 @@ class UI {
             juego.terminarJuego()
             if (!juego.terminado){
                 juego.cambiarJugador()
-                visual.turnoJugadores()
+                
             }
+            visual.turnoJugadores()
         }
     };     
 };
 
 
-export const visual = new UI();
+export const visual = new Tablero();
+

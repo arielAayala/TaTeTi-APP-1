@@ -1,4 +1,4 @@
-import{visual} from "/clases/UI.js";
+import{visual} from "/clases/tablero.js";
 
 
 
